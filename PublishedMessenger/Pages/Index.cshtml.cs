@@ -18,6 +18,8 @@ public class IndexModel : AppPageModel
     private readonly MyDatabaseContext _db;
     private readonly IHubContext<NotificationHub> _hub;
 
+
+
     public IndexModel(MyDatabaseContext db, IHubContext<NotificationHub> hub)
     {
         _db = db;
