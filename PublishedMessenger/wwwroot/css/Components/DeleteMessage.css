@@ -1,0 +1,40 @@
+﻿
+delete-message {
+    z-index: 99999;
+}
+
+delete-message.initial-off {
+    right: -335px;
+}
+
+delete-message.off {
+    animation-name: delete-message-off;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes delete-message-off {
+    from {
+        right: 10px;
+    }
+
+    to {
+        right: -335px;
+    }
+}
+
+delete-message.on {
+    animation-name: delete-message-on;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes delete-message-on {
+    from {
+        right: -335px;
+    }
+
+    to {
+        right: 10px;
+    }
+}

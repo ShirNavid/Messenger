@@ -1,0 +1,24 @@
+﻿@page "/ShowMessage"
+@model Massenger.Pages.ShowMessage.ShowMessageModel
+
+<message-displayer message-displayer-id="@Model.MessageDisplayer.WebComponentId" displayer-type="showMessage" ></message-displayer>
+
+<style>
+
+    html {
+        height: 100%;
+        border-radius: 5px;
+    }
+
+    body {
+        height: 100%;
+        margin: 0px;
+        border-radius: 5px;
+    }
+
+    message-displayer {
+        display: block;
+    }
+
+</style>
+

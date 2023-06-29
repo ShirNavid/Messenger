@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Messenger</title>
+    <script> globalThis.pageUrl = "@Model.pageUrl"; globalThis.state = "@Html.Raw(Model.initialState)"; </script>
+    
+    <script type="module" src="~/lib/jquery.min.js"></script>
+    
+    <link rel="stylesheet" href="~/css/DeleteMessage.css" />
+
+    <script type="module" src="~/js/GeneralFiles/Ajax.js"></script>
+    <script type="module" src="~/js/GeneralFiles/Guid.js"></script>
+    <script type="module" src="~/js/GeneralFiles/ExtendedAddEventListener.js"></script>
+
+    <script type="module" src="~/ts/GeneralClasses/JsToTs.js"></script>
+    
+    <script type="module" src="~/ts/Navbar/HTMLNavbarElement.js"></script>
+    <script type="module" src="~/ts/Navbar/HTMLNavbarAppsElement.js"></script>
+    <script type="module" src="~/ts/Navbar/HTMLNavbarTitleElement.js"></script>
+    <script type="module" src="~/ts/Navbar/HTMLNavbarSearchElement.js"></script>
+    <script type="module" src="~/ts/Navbar/HTMLNavbarSearchIconElement.js"></script>
+    <script type="module" src="~/ts/Navbar/HTMLNavbarSearchInputElement.js"></script>
+
+    <script type="module" src="~/ts/Grid/GridManager.js"></script>
+    <script type="module" src="~/ts/Grid/GridBase.js"></script>
+    <script type="module" src="~/ts/Grid/HTMLGridElement.js"></script>
+    <script type="module" src="~/ts/Grid/RowBase.js"></script>
+    <script type="module" src="~/ts/Grid/HTMLHeadRowElement.js"></script>
+    <script type="module" src="~/ts/Grid/HTMLContentRowElement.js"></script>
+    <script type="module" src="~/ts/Grid/CellBase.js"></script>
+    <script type="module" src="~/ts/Grid/HTMLHeadCellElement.js"></script>
+    <script type="module" src="~/ts/Grid/HTMLHeadImageCellElement.js"></script>
+    <script type="module" src="~/ts/Grid/HTMLHeadHasBeenSeenCellElement.js"></script>
+    <script type="module" src="~/ts/Grid/HTMLHeadHasBeenPinnedCellElement.js"></script>
+    <script type="module" src="~/ts/Grid/HTMLContentImageCellElement.js"></script>
+    <script type="module" src="~/ts/Grid/HTMLContentCellElement.js"></script>
+    <script type="module" src="~/ts/Grid/HTMLContentHasBeenSeenCellElement.js"></script>
+    <script type="module" src="~/ts/Grid/HTMLContentHasBeenPinnedCellElement.js"></script>
+    <script type="module" src="~/ts/Grid/ColumnSizeSetterBase.js"></script>
+    <script type="module" src="~/ts/Grid/HTMLHeadColumnSizeSetterElement.js"></script>
+    <script type="module" src="~/ts/Grid/HTMLContentColumnSizeSetterElement.js"></script>
+    <script type="module" src="~/ts/Grid/HTMLPagingButtonsGroupElement.js"></script>
+    <script type="module" src="~/ts/Grid/PagingButtonsGroupBase.js"></script>
+    <script type="module" src="~/ts/Grid/PagingButtonData.js"></script>
+
+    <script type="module" src="~/ts/DeleteMessage/HTMLDeleteMessageElement.js"></script>
+    <script type="module" src="~/ts/DeleteMessage/HTMLYesButtonElement.js"></script>
+    <script type="module" src="~/ts/DeleteMessage/HTMLNoButtonElement.js"></script>
+
+    <script type="module" src="~/ts/ToolsNavbar/HTMLToolsNavbarElement.js"></script>
+    <script type="module" src="~/ts/ToolsNavbar/HTMLToolsNavbarMenuListElement.js"></script>
+    <script type="module" src="~/ts/ToolsNavbar/ToolsBase.js"></script>
+    <script type="module" src="~/ts/ToolsNavbar/HTMLReceivedMessagesToolsElement.js"></script>
+    <script type="module" src="~/ts/ToolsNavbar/HTMLNewMailElement.js"></script>
+    <script type="module" src="~/ts/ToolsNavbar/HTMLNewMailIconElement.js"></script>
+    <script type="module" src="~/ts/ToolsNavbar/HTMLNewMailTextElement.js"></script>
+    <script type="module" src="~/ts/ToolsNavbar/HTMLMarkAsReadElement.js"></script>
+    <script type="module" src="~/ts/ToolsNavbar/HTMLMarkAsReadIconElement.js"></script>
+    <script type="module" src="~/ts/ToolsNavbar/HTMLMarkAsReadTextElement.js"></script>
+    <script type="module" src="~/ts/ToolsNavbar/HTMLPinElement.js"></script>
+    <script type="module" src="~/ts/ToolsNavbar/HTMLPinIconElement.js"></script>
+    <script type="module" src="~/ts/ToolsNavbar/HTMLPinTextElement.js"></script>
+    <script type="module" src="~/ts/ToolsNavbar/HTMLDeleteElement.js"></script>
+    <script type="module" src="~/ts/ToolsNavbar/HTMLDeleteIconElement.js"></script>
+    <script type="module" src="~/ts/ToolsNavbar/HTMLDeleteTextElement.js"></script>
+    <script type="module" src="~/ts/ToolsNavbar/HTMLNewMessageToolsNavbarElement.js"></script>
+    <script type="module" src="~/ts/ToolsNavbar/HTMLReplyMessageToolsElement.js"></script>
+    <script type="module" src="~/ts/ToolsNavbar/HTMLSendElement.js"></script>
+    <script type="module" src="~/ts/ToolsNavbar/HTMLSendIconElement.js"></script>
+    <script type="module" src="~/ts/ToolsNavbar/HTMLSendTextElement.js"></script>
+    <script type="module" src="~/ts/ToolsNavbar/HTMLMessageDateElement.js"></script>
+    <script type="module" src="~/ts/ToolsNavbar/HTMLMessageTimeElement.js"></script>
+    <script type="module" src="~/ts/ToolsNavbar/HTMLSetAsMainContactElement.js"></script>
+    <script type="module" src="~/ts/ToolsNavbar/HTMLSetAsMainContactIconElement.js"></script>
+    <script type="module" src="~/ts/ToolsNavbar/HTMLSetAsMainContactTextElement.js"></script>
+    <script type="module" src="~/ts/ToolsNavbar/HTMLAddAsSecondaryContactElement.js"></script>
+    <script type="module" src="~/ts/ToolsNavbar/HTMLAddAsSecondaryContactIconElement.js"></script>
+    <script type="module" src="~/ts/ToolsNavbar/HTMLAddAsSecondaryContactTextElement.js"></script>
+    
+    <script type="module" src="~/ts/ToolsNavbarMenuList/HTMLToolsNavbarMenuListElement.js"></script>
+    <script type="module" src="~/ts/ToolsNavbarMenuList/HTMLToolsNavbarMenuItemElement.js"></script>
+    <script type="module" src="~/ts/ToolsNavbarMenuList/HTMLReceivedMessagesItemElement.js"></script>
+    <script type="module" src="~/ts/ToolsNavbarMenuList/HTMLNewMessageItemElement.js"></script>
+    <script type="module" src="~/ts/ToolsNavbarMenuList/HTMLSendedMessagesItemElement.js"></script>
+    
+    <script type="module" src="~/ts/Receivers/HTMLReceiversListElement.js"></script>
+    <script type="module" src="~/ts/Receivers/HTMLReceiverItemElement.js"></script>
+    <script type="module" src="~/ts/Receivers/HTMLMainContactElement.js"></script>
+    <script type="module" src="~/ts/Receivers/HTMLSecondaryContactElement.js"></script>
+
+    <script type="module" src="~/ts/SelectAccount/AccountData.js"></script>
+    <script type="module" src="~/ts/SelectAccount/HTMLSelectAccountElement.js"></script>
+    <script type="module" src="~/ts/SelectAccount/HTMLSelectAccountItemElement.js"></script>
+    <script type="module" src="~/ts/SelectAccount/HTMLSelectAccountItemImageElement.js"></script>
+    <script type="module" src="~/ts/SelectAccount/HTMLSelectAccountItemTextElement.js"></script>
+    <script type="module" src="~/ts/SelectAccount/HTMLSelectAccountListElement.js"></script>
+    <script type="module" src="~/ts/SelectAccount/HTMLSelectAccountManagerElement.js"></script>
+    <script type="module" src="~/ts/SelectAccount/HTMLSelectAccountSelectedItemElement.js"></script>
+    <script type="module" src="~/ts/SelectAccount/HTMLSelectAccountSelectedItemImageElement.js"></script>
+    <script type="module" src="~/ts/SelectAccount/HTMLSelectAccountSelectedItemTextElement.js"></script>
+    
+    <script type="module" src="~/ts/MainReceiverId/HTMLMainReceiverIdElement.js"></script>
+    <script type="module" src="~/ts/SenderId/HTMLSenderIdElement.js"></script>
+    <script type="module" src="~/ts/ReplyId/HTMLReplyIdElement.js"></script>
+
+    <script type="module" src="~/ts/MessageDisplayer/MessageData.js"></script>
+    <script type="module" src="~/ts/MessageDisplayer/HTMLMessageElement.js"></script>
+    <script type="module" src="~/ts/MessageDisplayer/MessageDisplayerManager.js"></script>
+    <script type="module" src="~/ts/MessageDisplayer/MessageDisplayerBase.js"></script>
+    <script type="module" src="~/ts/MessageDisplayer/HTMLMessageDisplayerElement.js"></script>
+    <script type="module" src="~/ts/MessageDisplayer/HTMLMessageTitleBoxElement.js"></script>
+    <script type="module" src="~/ts/MessageDisplayer/HTMLMessageTitleElement.js"></script>
+    <script type="module" src="~/ts/MessageDisplayer/HTMLMessageDateTimeElement.js"></script>
+    <script type="module" src="~/ts/MessageDisplayer/HTMLMessageTextElement.js"></script>
+    
+    <script type="module" src="~/ts/FileTransaction/HTMLUploadFileTransactionElement.js"></script>
+
+    <script type="module" src="~/ts/Notification/NotificationData.js"></script>
+    <script type="module" src="~/ts/Notification/HTMLNotificationElement.js"></script>
+    <script type="module" src="~/ts/Notification/HTMLNotificationTextElement.js"></script>
+    <script type="module" src="~/ts/Notification/HTMLNotificationCloseElement.js"></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+</head>
+<body>
+
+    @Html.AntiForgeryToken()
+
+    @RenderBody()
+
+</body>
+</html>

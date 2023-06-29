@@ -1,0 +1,130 @@
+﻿html {
+    height: 100%;
+}
+
+body {
+    margin: 0px;
+    font-family: system-ui;
+    height: 100%;
+}
+
+div.content {
+    position: absolute;
+    display: inline-block;
+    background-color: #FAFAFA;
+    top: 48px;
+    height: calc(100% - 48px);
+    width: 100%;
+    z-index: 4;
+}
+
+iframe {
+    position: absolute;
+    display: inline-block;
+    overflow: hidden;
+    border-width: 0px;
+    right: 3%;
+    top: 65px;
+    height: calc(100% - 92px);
+    box-shadow: lightgrey 0px 2px 3px;
+    border-radius: 5px;
+}
+
+    iframe.initial-class {
+        width: 94%;
+    }
+
+    iframe.shortening {
+        width: 94%;
+        animation-name: shorten-iframe;
+        animation-duration: 0.3s;
+        animation-fill-mode: forwards;
+    }
+
+    iframe.lengthening {
+        width: calc(94% - 172px);
+        animation-name: lengthen-iframe;
+        animation-delay: 0.3s;
+        animation-duration: 0.3s;
+        animation-fill-mode: forwards;
+    }
+
+@keyframes shorten-iframe {
+    from {
+        width: 94%;
+    }
+
+    to {
+        width: calc(94% - 172px);
+    }
+}
+
+@keyframes lengthen-iframe {
+    from {
+        width: calc(94% - 172px);
+    }
+
+    to {
+        width: 94%;
+    }
+}
+
+tools-navbar-menu-list.initial-class {
+    width: 0px;
+    margin-right: 0px;
+}
+
+tools-navbar-menu-list.appearing {
+    animation-name: appeare-tools-navbar-menu-list;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+
+tools-navbar-menu-list.disappearing {
+    width: 162px;
+    margin-right: 10px;
+    animation-name: disappeare-tools-navbar-menu-list;
+    animation-duration: 0.3s;
+    animation-delay: 0.3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes appeare-tools-navbar-menu-list {
+    from {
+        width: 0px;
+        margin-right: 0px;
+    }
+
+    to {
+        width: 162px;
+        margin-right: 10px;
+    }
+}
+
+@keyframes disappeare-tools-navbar-menu-list {
+    from {
+        width: 162px;
+        margin-right: 10px;
+    }
+
+    to {
+        width: 0px;
+        margin-right: 0px;
+    }
+}
+
+web-notification.disappear {
+    animation-name: disappear-notification;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes disappear-notification {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+

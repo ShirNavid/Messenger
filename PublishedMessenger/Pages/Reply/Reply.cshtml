@@ -1,0 +1,97 @@
+﻿@page "/Reply"
+@model Massenger.Pages.Reply.ReplyModel
+
+<select-account-manager select-account-id="@Model.SelectAccount.WebComponentId"></select-account-manager>
+<sender-id>@Model.SenderId</sender-id>
+<reply-id>@Model.ReplyId</reply-id>
+<main-receiver-id>@Model.MainReceiverId</main-receiver-id>
+
+<message-displayer message-displayer-id="@Model.MessageDisplayer.WebComponentId" displayer-type="reply" ></message-displayer>
+
+<div id="newMessageDiv">
+
+    <input id="title" placeholder="title..." />
+    <upload-file-transaction></upload-file-transaction>
+    <div class="line"></div>
+
+    <textarea id="text" placeholder="text..."></textarea>
+    <div class="line"></div>
+
+    <receivers-list></receivers-list>
+
+</div>
+
+<style>
+
+    html {
+        height: 100%;
+        border-radius: 5px;
+    }
+
+    body {
+        height: 100%;
+        margin: 0px;
+        border-radius: 5px;
+    }
+
+    message-displayer {
+        display: block;
+    }
+
+    div#newMessageDiv {
+        position: relative;
+        display: block;
+        height: 250px; 
+        background-color: white;
+        bottom: 0px;
+    }
+
+    div.line {
+        position: relative;
+        display: block;
+        width: calc(100% - 40px);
+        height: 1px;
+        background-color: #d8d8d8;
+        left: 20px;
+        box-sizing: border-box;
+    }
+
+    #title {
+        position: relative;
+        display: block;
+        width: calc(100% - 40px);
+        height: 40px;
+        font-size: 15px;
+        border-width: 0px;
+        box-sizing: border-box;
+        padding: 12px 10px;
+        margin: 0px 20px;
+        font-family: sans-serif;
+        outline: none;
+    }
+
+    #text {
+        position: relative;
+        display: block;
+        width: calc(100% - 40px);
+        height: calc(100% - 100px);
+        font-size: 15px;
+        border-width: 0px;
+        box-sizing: border-box;
+        padding: 12px 10px;
+        margin: 0px 20px;
+        font-family: sans-serif;
+        resize: none;
+        outline: none;
+    }
+
+    #addFile {
+        width: 250px;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="~/css/Components/Scroll.css" />
+
+<script src="~/js/PageFiles/ReplyFunctions.js"></script>

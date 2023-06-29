@@ -1,0 +1,32 @@
+﻿@page 
+@model Massenger.Pages.Index.IndexModel
+
+<web-navbar></web-navbar>
+
+<div class="content">
+
+    <tools-navbar></tools-navbar>
+
+    <tools-navbar-menu-list></tools-navbar-menu-list>
+
+    <iframe class="initial-class"></iframe>
+
+</div>
+
+<delete-message function-text="globalThis.deleteMessages()"></delete-message>
+
+<link rel="stylesheet" href="~/css/Pages/Index.css" />
+<link rel="stylesheet" href="~/css/Components/DeleteMessage.css" />
+
+<script>globalThis.pageFunctions = [];</script>
+<script type="module" src="~/js/PageFiles/ReceivedMessages.js"></script>
+<script type="module" src="~/js/PageFiles/SendedMessages.js"></script>
+<script type="module" src="~/js/PageFiles/NewMessage.js"></script>
+<script type="module" src="~/js/PageFiles/Reply.js"></script>
+<script type="module" src="~/js/PageFiles/ShowMessage.js"></script>
+<script type="module" src="~/js/PageFiles/Index.js"></script>
+
+<script type="module" src="~/lib/microsoft/signalr/dist/browser/signalr.min.js"></script>
+<script type="module" src="~/js/GeneralFiles/NotificationHub.js"></script>
+<script type="module" src="~/ts/SignalR/NotificationHub.js"></script>
+
